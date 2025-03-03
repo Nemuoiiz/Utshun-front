@@ -63,6 +63,17 @@
     <v-main :class="{ 'no-padding': $route.meta.title === '首頁' }">
       <router-view></router-view>
     </v-main>
+
+    <!-- 頁尾------------------------------- -->
+    <v-footer padless class="footer" :color="`rgba(159, 190, 155, 0.6)`">
+      <v-container>
+        <v-row justify="center">
+          <v-col class="text-center" cols="12">
+            <span>© 2025 U-tshun. All rights reserved.</span>
+          </v-col>
+        </v-row>
+      </v-container>
+    </v-footer>
   </v-app>
 </template>
 

@@ -78,9 +78,37 @@
       </v-col>
     </v-row>
   </v-container>
+  <!-- 測試 -->
+  <v-container>
+      <h1 :style="{ color: titleColor, transition: 'color 0.3s' }">
+        滾動看看標題變色！
+      </h1>
+
+      <div style="height: 2000px; padding-top: 20px;">
+        往下滾動看看效果～
+      </div>
+    </v-container>
 </template>
 
 <script setup>
+import { ref, onMounted, onUnmounted } from 'vue';
+
+const titleColor = ref('#000'); // 初始字體顏色
+
+const handleScroll = () => {
+  const scrollY = window.scrollY;
+
+  // 滾動超過 100px 時變色
+  titleColor.value = scrollY > 1100 ? '#ff4081' : '#000';
+};
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll);
+});
 </script>
 
 <style>
