@@ -60,7 +60,7 @@
       </v-container>
     </v-app-bar>
 
-    <v-main :class="{ 'no-padding': $route.meta.title === '首頁' }">
+    <v-main :class="{ 'no-padding': $route.meta.title === '首頁' || $route.meta.title === '品牌故事' }">
       <router-view></router-view>
     </v-main>
 
@@ -120,6 +120,7 @@ const logout = async () => {
   background-color: #eee8df;
 }
 </style>
+
 
 <style scoped>
 
