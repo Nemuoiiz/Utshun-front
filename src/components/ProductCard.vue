@@ -1,13 +1,13 @@
 <template>
-  <v-card>
+  <v-card style="border-radius: 20px;">
     <v-img :src="image" height="200" cover></v-img>
     <v-card-title>
       <!-- 加入可以連至商品頁面的連結 -->
       <!-- 要在 pages 開 product 資料夾 -->
-      <router-link :to="'/product/' + _id">{{ name }}</router-link>
+      <router-link :to="'/product/' + _id" class="no-decoration">{{ name }}</router-link>
     </v-card-title>
     <!-- <v-card-subtitle>{{ category }}</v-card-subtitle> -->
-    <v-card-subtitle>{{ price }}</v-card-subtitle>
+    <v-card-subtitle class="mb-5">{{ price }}</v-card-subtitle>
     <!-- <v-card-text>{{ description }}</v-card-text> -->
   </v-card>
 </template>
@@ -59,3 +59,15 @@ defineProps({
   }
 })
 </script>
+
+<style scoped>
+.v-card{
+  font-family:Iansui;
+  font-size: 20px;
+}
+
+.no-decoration {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+</style>

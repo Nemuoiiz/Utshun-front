@@ -11,11 +11,11 @@
         <v-img :src="product.image"></v-img>
       </v-col>
       <v-col cols="12" md="6">
-        <p v-if="product">
+        <p v-if="product" class="mb-5">
           商品類別：{{ product.category?.main || '未分類' }}{{ product.category?.sub ? '．' + product.category.sub : '' }}
         </p>
-        <p>{{ product.price }}</p>
-        <p>{{ product.description }}</p>
+        <p class="mb-5">💲{{ product.price }}</p>
+        <p class="mb-5">{{ product.description }}</p>
         <!-- :disabled="isSubmitting" 送出停用表單 -->
         <v-form :disabled="isSubmitting" @submit.prevent="submit">
           <v-text-field v-model.number="quantity.value.value" type="number" :error-messages="quantity.errorMessage.value"></v-text-field>
@@ -127,6 +127,19 @@ const submit = handleSubmit(async (values) => {
   }
 })
 </script>
+
+<style>
+body {
+  font-size: 18px;
+  background-color: #eee8df;
+}
+</style>
+
+<style scoped>
+.v-container{
+  font-family:Iansui ;
+}
+</style>
 
 <route lang="yaml">
   meta:
