@@ -1,19 +1,33 @@
 <template>
   <v-container>
-    <h2 class="mt-10">Donation info</h2>
+    <h1 class="title mt-10 fade-in">Let's share together !</h1>
     <v-row class="d-flex justify-center align-center">
-      <v-col cols="6">
-        <img src="../assets/images/nature.png" alt="捐贈資訊">
-      </v-col>
-      <v-col cols="6">
-        <p class="mb-4">
-          您的捐贈將幫助許多有需要的人。無論是美妝產品、保養品，還是上妝工具，您的心意將帶來改變。
-        </p>
-      </v-col>
-    </v-row>
+  <!-- 左側圖片 -->
+  <v-col cols="4" class="fade-in d-flex justify-center">
+    <img src="../assets/images/nature.png" alt="捐贈資訊">
+  </v-col>
 
-    <h2 class="mt-10 mb-10">Q & A</h2>
-    <v-expansion-panels variant="accordion">
+  <!-- 右側文字區塊 -->
+  <v-col
+    cols="8"
+    class="fade-in d-flex flex-column justify-center align-center text-center"
+    style="border-radius: 50px; padding: 20px; width: 100%;"
+  >
+    <p style="width: 100%;">
+      你是否有閒置的彩妝品，還未用完卻擱置已久？ <br><br>
+      現在，你可以讓它們擁有新的價值！ <br>
+      透過 U-tshun，你的二手彩妝將被妥善分類， <br>
+      未過期的美妝用品將贈與清寒家庭或弱勢女性， <br>
+      過期或測試用彩妝則提供給彩妝學習者，或大體化妝師作為練習材料。 <br><br>
+      每一次捐贈，都是對環境的友善選擇，更是對需要幫助者的溫暖支持。 <br>
+      現在就加入我們，讓美麗不僅停留在外表，更能成為善意的循環！💖✨ <br>
+    </p>
+  </v-col>
+</v-row>
+
+
+    <h1 class="fade-in title mt-10 mb-10">Q & A</h1>
+    <v-expansion-panels variant="accordion" class="fade-in">
       <v-expansion-panel>
         <v-expansion-panel-title>可以捐贈哪些彩妝品？</v-expansion-panel-title>
         <v-expansion-panel-text>
@@ -40,7 +54,7 @@
           您可將符合條件的彩妝品包裝妥善後，寄送至以下地址：<br>
           📍 台中市西屯區○○路○○號 ū-tshun（有賰）捐贈小組<br>
           📞 聯絡電話：09XX-XXX-XXX<br>
-          ✉ 電子信箱：support@u-tshun.com
+          ✉️ 電子信箱：support@u-tshun.com
         </v-expansion-panel-text>
       </v-expansion-panel>
 
@@ -62,15 +76,17 @@
       </v-expansion-panel>
     </v-expansion-panels>
 
-    <h2 class="mt-10 mb-10">Donation Form</h2>
+    <h1 class="fade-in title mt-10 mb-10">Donation Form</h1>
     <v-row class="d-flex justify-center align-center">
       <v-col cols="6">
-        <v-form>
+        <v-form class="fade-in">
           <v-text-field label="寄件人姓名" required></v-text-field>
           <v-text-field label="聯絡電話" required></v-text-field>
           <v-text-field label="寄件地址" required></v-text-field>
           <v-textarea label="捐贈內容描述" rows="3"></v-textarea>
-          <v-btn color="primary" class="mt-4">提交</v-btn>
+          <div class="text-center">
+          <v-btn style="border-radius: 10px;" color="success" class="mt-4 ">Submit</v-btn>
+        </div>
         </v-form>
       </v-col>
       <v-col cols="4">
@@ -78,43 +94,84 @@
       </v-col>
     </v-row>
   </v-container>
-  <!-- 測試 -->
-  <v-container>
-      <h1 :style="{ color: titleColor, transition: 'color 0.3s' }">
-        滾動看看標題變色！
-      </h1>
-
-      <div style="height: 2000px; padding-top: 20px;">
-        往下滾動看看效果～
-      </div>
-    </v-container>
 </template>
 
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { onMounted } from 'vue';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-const titleColor = ref('#000'); // 初始字體顏色
-
-const handleScroll = () => {
-  const scrollY = window.scrollY;
-
-  // 滾動超過 100px 時變色
-  titleColor.value = scrollY > 1100 ? '#ff4081' : '#000';
-};
+gsap.registerPlugin(ScrollTrigger);
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll);
-});
+  // 修改 .fade-in 類別動畫配置
+  gsap.utils.toArray('.fade-in').forEach((el) => {
+    gsap.from(el, {
+      opacity: 0,
+      y: -50,
+      duration: 1,
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 80%', // 可以根據需要調整
+        end: 'top 30%',
+        toggleActions: 'play none none none',
+        once: true // 確保動畫只執行一次
+      }
+    });
+  });
 
-onUnmounted(() => {
-  window.removeEventListener('scroll', handleScroll);
+  // 同樣的配置可應用於其他類別 .fade-up 和 .fade-right
+  gsap.utils.toArray('.fade-up').forEach((el) => {
+    gsap.from(el, {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 80%',
+        toggleActions: 'play none none none',
+        once: true
+      }
+    });
+  });
+
+  gsap.utils.toArray('.fade-right').forEach((el) => {
+    gsap.from(el, {
+      opacity: 0,
+      x: 100,
+      duration: 1,
+      scrollTrigger: {
+        trigger: el,
+        start: 'top 80%',
+        toggleActions: 'play none none none',
+        once: true
+      }
+    });
+  });
 });
 </script>
 
+
 <style>
 body {
-  font-size: 24px;
+  font-size: 20px;
   background-color: #eee8df;
+}
+</style>
+
+<style scoped>
+.v-container{
+  font-family:Iansui ;
+}
+
+.title{
+  font-family: "Croissant One", serif;
+}
+
+.v-expansion-panel-title{
+  font-size: 20px;
+  font-weight: bold;
+  color: rgb(203, 192, 189);
 }
 </style>
 

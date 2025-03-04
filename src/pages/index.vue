@@ -18,7 +18,7 @@
       <!-- 標題 -->
       <v-col cols="12">
         <v-row id="story" class="title">
-          <h1>About&nbsp;</h1>
+          <h1>Concept&nbsp;</h1>
           <v-icon size="50">mdi-leaf</v-icon>
         </v-row>
       </v-col>
@@ -47,41 +47,24 @@
       <v-col cols="12">
         <v-row id="product" class="title">
           <v-icon size="50">mdi-leaf</v-icon>
-          <h1>&nbsp;Product</h1>
+          <h1>&nbsp;Renew</h1>
         </v-row>
       </v-col>
     </v-row>
 
     <v-row>
       <v-col cols="6" class="d-flex flex-column align-center justify-center">
-        <div class="mb-10 text-center" style="font-size: 24px;">
+        <div class="mb-10 text-center" style="font-size: 24px;  font-family: Iansui;">
           精選二手與可再利用美妝品，讓閒置彩妝重獲新生。<br>
           經篩選分類，確保安全與品質，同時減少浪費。<br>
           分享美麗，讓每件彩妝找到最適合的歸屬！
         </div>
-        <v-btn rounded="xl">see more</v-btn>
+        <v-btn rounded="xl" @click="$router.push('/products')">See More</v-btn>
       </v-col>
 
       <v-col cols="6" class="d-flex align-center justify-center">
-        <img class="p-pic" src="../assets/images/carousel-3.jpg"/>
+        <img class="p-pic" src="../assets/images/8378925.png"/>
       </v-col>
-    </v-row>
-  </v-container>
-
-  <!-- 🔻活動專區---------------------------------------------- -->
-  <v-container class="mt-10 mb-10">
-    <v-row>
-      <!-- 標題 -->
-      <v-col cols="12">
-        <v-row id="activity" class="title">
-          <h1>Activity&nbsp;</h1>
-          <v-icon size="50">mdi-leaf</v-icon>
-        </v-row>
-      </v-col>
-    </v-row>
-
-    <v-row class="d-flex  justify-center">
-
     </v-row>
   </v-container>
 

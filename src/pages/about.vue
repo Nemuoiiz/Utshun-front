@@ -9,7 +9,7 @@
 
     <h1 class="title text-center">
       U-tshun
-      <p style="font-size: 2rem;font-family: Iansui; color: #4F6F49;font-weight: 200;text-shadow: none;">
+      <p style="font-size: 2rem;font-family: Iansui; color: rgb(120, 133, 111);font-weight: 200;text-shadow: none;">
         誕生於對美麗與永續的深思<v-icon>mdi-water-opacity</v-icon>
       </p>
     </h1>
@@ -34,40 +34,41 @@
         讓「有賰」成為負責任的生活態度。
     </div>
 
-<!-- 三圖 -->
-<div class="circles">
-  <v-row>
-    <v-col cols="4" sm="4" class="d-flex justify-center">
-      <v-card class="pa-4" style="text-align: center;">
-        <v-img class="circle" src="../assets/images/cosmetic.png"></v-img>
-        <v-card-title class="mt-4">資源共享，共創價值</v-card-title>
-        <v-card-subtitle>
-          將剩餘的化妝品重新分配，透過捐贈與交換，讓每一份美麗都能被珍惜與善用。
-        </v-card-subtitle>
-      </v-card>
-    </v-col>
+    <!-- 三圖 -->
+    <div class="circles">
+      <v-row align="center" justify="center">
+        <v-col cols="3" class="circle-bg d-flex flex-column align-center text-center">
+          <v-container class="content">
+            <img class="circle" src="../assets/images/cosmetic.png">
+            <div class="circle-text">資源共享，共創價值</div>
+            <div class="description">
+              將剩餘的化妝品重新分配，透過捐贈與交換，讓每一份美麗都能被珍惜與善用。
+            </div>
+          </v-container>
+        </v-col>
 
-    <v-col cols="4" sm="4" class="d-flex justify-center">
-      <v-card class="pa-4" style="text-align: center;">
-        <v-img class="circle" src="../assets/images/no-plastic.png"></v-img>
-        <v-card-title class="mt-4">永續循環，減少浪費</v-card-title>
-        <v-card-subtitle>
-          打造化妝品的二次生命，減少閒置與丟棄，推動環保與永續時尚，讓美麗更有意義。
-        </v-card-subtitle>
-      </v-card>
-    </v-col>
+        <v-col cols="3" class="circle-bg d-flex flex-column align-center text-center">
+          <v-container class="content">
+            <img class="circle" src="../assets/images/no-plastic.png">
+            <div class="circle-text">永續循環，減少浪費</div>
+            <div class="description">
+              打造化妝品的二次生命，減少閒置與丟棄，推動環保與永續時尚，讓美麗更有意義。
+            </div>
+          </v-container>
+        </v-col>
 
-    <v-col cols="4" sm="4" class="d-flex justify-center">
-      <v-card class="pa-4" style="text-align: center;">
-        <v-img class="circle" src="../assets/images/love.png"></v-img>
-        <v-card-title class="mt-4">友善社群，溫暖互助</v-card-title>
-        <v-card-subtitle>
-          串聯捐贈者與有需要的人，建立信任與關懷的平台，讓美妝不只是裝飾，更是一種分享的力量。
-        </v-card-subtitle>
-      </v-card>
-    </v-col>
-  </v-row>
-</div>
+        <v-col cols="3" class="circle-bg d-flex flex-column align-center text-center">
+          <v-container class="content">
+            <img class="circle" src="../assets/images/love.png">
+            <div class="circle-text">友善社群，溫暖互助</div>
+            <div class="description">
+              串聯捐贈者與有需要的人，建立信任與關懷的平台，讓美妝不只是裝飾，更是一種分享的力量。
+            </div>
+          </v-container>
+        </v-col>
+      </v-row>
+    </div>
+
 
 
   </v-container>
@@ -107,7 +108,7 @@ onMounted(() => {
         start: 'top 80%',
         end: 'bottom 20%',
         scrub: 0.5,
-        markers: true, // 開發時用，正式版可以刪
+        // markers: true, // 開發時用，正式版可以刪
       },
     });
   });
@@ -146,33 +147,33 @@ onMounted(() => {
   font-weight: bold;
   z-index: 10;
   color: rgba(255, 247, 214, 0.9);
-  text-shadow: rgb(23, 24, 23) 0.1em 0.1em 0.2em
+  text-shadow: rgb(108, 82, 49) 0.1em 0.1em 0.5em
 }
 
 .title{
   position: absolute;
   top: 10%;
-  left: 70%;
+  right: 5%;
   transform: translateX(-50%, -50%);
   z-index: 10;
 
   font-size: 6rem;
   color: rgb(255, 255, 255);
-  text-shadow: 0 0 0.1em rgb(70, 80, 50), 0 0 0.5em rgb(159, 199, 127)
+  text-shadow: 0 0 0.1em rgb(129, 151, 88), 0 0 0.5em rgb(159, 199, 127)
 }
 
 .text-introduce {
-  width: 800px;
-  background: rgba(45, 56, 36, 0.8);
+  width: 650px;
+  background: rgba(108, 125, 96, 0.9);
   border-radius: 20px ;
   border: 5px double;
   border-color: rgb(197, 197, 197);
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
-  padding: 20px;
+  padding: 50px;
 
   z-index: 10;
   color: white;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   text-align: left;
 
   font-family: Iansui;
@@ -185,16 +186,44 @@ onMounted(() => {
 
 .circles {
   position: absolute;
-  top: 2000px;
-  width: 100%;
+  top: 64%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  font-family: Iansui;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .circle {
-  position: relative;
-  top: 100px;
-  height: 250px;  /* 調整為固定的高度 */
-  width: 250px;   /* 設定寬度 */
-  margin: 0 auto;
+  width: 70%; /* 調整圖片大小 */
+  height:70%;
+  object-fit: cover;
+}
+
+.circle-text {
+  margin-top: 10px;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.description {
+  margin-top: 5px;
+  font-size: 1rem;
+  max-width: 80%;
+}
+
+.circle-bg{
+  background: rgba(169, 174, 136, 0.8);
+  border-radius: 20px;
+  box-shadow: 5px 5px 15px rgb(155, 136, 104);
+  padding: 20px;
+  margin-inline: 20px;
 }
 </style>
 
